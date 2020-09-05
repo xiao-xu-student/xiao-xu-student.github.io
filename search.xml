@@ -3,7 +3,7 @@
   <entry>
     <title>Git 简单命令</title>
     <url>/archives/a3765c9.html</url>
-    <content><![CDATA[<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><p><img src="https://wx2.sbimg.cn/2020/09/02/6bs0w.png" alt="6bs0w.png"></p>
+    <content><![CDATA[<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><p><img src="https://s1.ax1x.com/2020/09/05/wEWCAH.png" alt="wEWCAH.png"></p>
 <h2 id="下面介绍基本Git基本命令"><a href="#下面介绍基本Git基本命令" class="headerlink" title="下面介绍基本Git基本命令"></a>下面介绍基本Git基本命令</h2><blockquote>
 <h3 id="设置信息"><a href="#设置信息" class="headerlink" title="设置信息"></a>设置信息</h3></blockquote>
 <h4 id="设置用户信息"><a href="#设置用户信息" class="headerlink" title="设置用户信息"></a>设置用户信息</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">	git config --global username &quot;yourName&quot;</span><br><span class="line"></span><br><span class="line">​	git config --global user.email &quot;yourEmail&quot;</span><br></pre></td></tr></table></figure>
@@ -37,11 +37,11 @@
 <blockquote>
 <p>代码提交顺序视图</p>
 </blockquote>
-<p><img src="https://wx2.sbimg.cn/2020/09/02/6bLUl.png" alt="6bLUl.png"></p>
+<p><img src="https://s1.ax1x.com/2020/09/05/wEWi4A.png" alt="wEWi4A.png"></p>
 <blockquote>
 <p>Git目录下的文件状态</p>
 </blockquote>
-<p><img src="https://wx2.sbimg.cn/2020/09/02/6bJJo.png" alt="6bJJo.png"></p>
+<p><img src="https://s1.ax1x.com/2020/09/05/wEWPNd.png" alt="wEWPNd.png"></p>
 <h4 id="查看文件状态"><a href="#查看文件状态" class="headerlink" title="查看文件状态"></a>查看文件状态</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git status</span><br><span class="line">git status -s   &#x2F;&#x2F;使输出更简洁</span><br></pre></td></tr></table></figure>
 
 <h4 id="将未跟踪文件加入暂存区"><a href="#将未跟踪文件加入暂存区" class="headerlink" title="将未跟踪文件加入暂存区"></a>将未跟踪文件加入暂存区</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git add &quot;fileName&quot;</span><br></pre></td></tr></table></figure>
