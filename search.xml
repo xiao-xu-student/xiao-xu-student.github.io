@@ -1,56 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>IDEA 突然无法打开</title>
-    <url>/archives/8999c4d.html</url>
-    <content><![CDATA[<h2 id="问题来源：idea2019突然打不开并弹出"><a href="#问题来源：idea2019突然打不开并弹出" class="headerlink" title="问题来源：idea2019突然打不开并弹出"></a>问题来源：idea2019突然打不开并弹出</h2><p>错误示例：</p>
-<p><img src="https://s1.ax1x.com/2020/09/20/wTjrhq.jpg" alt="wTjrhq.jpg"></p>
-<h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><p>看到这个错误第一考虑一下自己的jdk是否配好了环境</p>
-<p>注意到下面的 JVM 错误，是否 I在使用dea 时设置过 JVM 的参数</p>
-<h2 id="破解时带来的错误"><a href="#破解时带来的错误" class="headerlink" title="破解时带来的错误"></a>破解时带来的错误</h2><p>一、检查破解的jar包是否在放在指定目录下</p>
-<p>二、编辑参数写错，或者用记事本编辑保存时，文本编码格式出错</p>
-<a id="more"></a>
-
-<h2 id="用户配置文件出错"><a href="#用户配置文件出错" class="headerlink" title="用户配置文件出错"></a>用户配置文件出错</h2><p>上次我的错误就是C:\Users\ASUS.IntelliJIdea2019.3\config\idea64.exe.vmoptions文件中的-javaagent:的目录错误</p>
-<p>如果这里错误的话就把破解包的地址引到这里</p>
-<p>如图：（我的是放在f盘下）</p>
-<p><img src="https://s1.ax1x.com/2020/09/20/wTzODU.jpg" alt="wTzODU.jpg"></p>
-<p>最后不要删除整个用户配置文件要不然你之前idea的配置以及插件都需要重新配置</p>
-]]></content>
-      <categories>
-        <category>错误</category>
-      </categories>
-      <tags>
-        <tag>错误</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode(两数和)</title>
-    <url>/archives/afd39f9c.html</url>
-    <content><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p><strong>难度简单</strong></p>
-<p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
-<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。</p>
-<p>示例：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">给定 nums = [<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>], target = <span class="number">9</span></span><br><span class="line"></span><br><span class="line">因为 nums[<span class="number">0</span>] + nums[<span class="number">1</span>] = <span class="number">2</span> + <span class="number">7</span> = <span class="number">9</span></span><br><span class="line">所以返回 [<span class="number">0</span>, <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-
-<p>我第一次完成写时用的Java</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"> <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">int</span>[] a=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;nums.length;i++)&#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;nums.length;j++)&#123;</span><br><span class="line"></span><br><span class="line">         <span class="keyword">if</span>(nums[i]+nums[j]==target)&#123;</span><br><span class="line">            a[<span class="number">0</span>]=i;</span><br><span class="line">            a[<span class="number">1</span>]=j;</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>我刚开始的思路是通过穷举法，两次循环直到对比出两个数字是否相等</p>
-<p><strong>下面是遍历哈希表的方法</strong></p>
-<p>在进行迭代并将元素插入到表中的同时，我们还会回过头来检查表中是否已经存在当前元素所对应的目标元素。如果它存在，那我们已经找到了对应解，并立即将其返回。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"> <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">     <span class="keyword">int</span>[] a=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">     <span class="comment">//建立key-value，对应的map</span></span><br><span class="line">	HashMap&lt;Integer,Integer&gt; hash = <span class="keyword">new</span> HashMap&lt;Integer,Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            <span class="comment">//containsKey方法：判断map中是否存在key为num[i]</span></span><br><span class="line">            <span class="keyword">if</span>(hash.containsKey(nums[i]))&#123;</span><br><span class="line">                a[<span class="number">0</span>] = i;</span><br><span class="line">                a[<span class="number">1</span>] = hash.get(nums[i]);</span><br><span class="line">                <span class="keyword">return</span> a;</span><br><span class="line">            &#125;</span><br><span class="line">            hash.put(target-nums[i],i);</span><br><span class="line">        &#125;</span><br><span class="line">     <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/two-sum">https://leetcode-cn.com/problems/two-sum</a><br>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Git 简单命令</title>
     <url>/archives/a3765c9.html</url>
     <content><![CDATA[<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><p><img src="https://s1.ax1x.com/2020/09/05/wEWCAH.png" alt="wEWCAH.png"></p>
@@ -193,5 +143,95 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>IDEA 突然无法打开</title>
+    <url>/archives/8999c4d.html</url>
+    <content><![CDATA[<h2 id="问题来源：idea2019突然打不开并弹出"><a href="#问题来源：idea2019突然打不开并弹出" class="headerlink" title="问题来源：idea2019突然打不开并弹出"></a>问题来源：idea2019突然打不开并弹出</h2><p>错误示例：</p>
+<p><img src="https://s1.ax1x.com/2020/09/20/wTjrhq.jpg" alt="wTjrhq.jpg"></p>
+<h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><p>看到这个错误第一考虑一下自己的jdk是否配好了环境</p>
+<p>注意到下面的 JVM 错误，是否 I在使用dea 时设置过 JVM 的参数</p>
+<h2 id="破解时带来的错误"><a href="#破解时带来的错误" class="headerlink" title="破解时带来的错误"></a>破解时带来的错误</h2><p>一、检查破解的jar包是否在放在指定目录下</p>
+<p>二、编辑参数写错，或者用记事本编辑保存时，文本编码格式出错</p>
+<a id="more"></a>
+
+<h2 id="用户配置文件出错"><a href="#用户配置文件出错" class="headerlink" title="用户配置文件出错"></a>用户配置文件出错</h2><p>上次我的错误就是C:\Users\ASUS.IntelliJIdea2019.3\config\idea64.exe.vmoptions文件中的-javaagent:的目录错误</p>
+<p>如果这里错误的话就把破解包的地址引到这里</p>
+<p>如图：（我的是放在f盘下）</p>
+<p><img src="https://s1.ax1x.com/2020/09/20/wTzODU.jpg" alt="wTzODU.jpg"></p>
+<p>最后不要删除整个用户配置文件要不然你之前idea的配置以及插件都需要重新配置</p>
+]]></content>
+      <categories>
+        <category>错误</category>
+      </categories>
+      <tags>
+        <tag>错误</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode(两数和)</title>
+    <url>/archives/afd39f9c.html</url>
+    <content><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p><strong>难度简单</strong></p>
+<p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。</p>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">给定 nums = [<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>], target = <span class="number">9</span></span><br><span class="line"></span><br><span class="line">因为 nums[<span class="number">0</span>] + nums[<span class="number">1</span>] = <span class="number">2</span> + <span class="number">7</span> = <span class="number">9</span></span><br><span class="line">所以返回 [<span class="number">0</span>, <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+<p>我第一次完成写时用的Java</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"> <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">int</span>[] a=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;nums.length;i++)&#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;nums.length;j++)&#123;</span><br><span class="line"></span><br><span class="line">         <span class="keyword">if</span>(nums[i]+nums[j]==target)&#123;</span><br><span class="line">            a[<span class="number">0</span>]=i;</span><br><span class="line">            a[<span class="number">1</span>]=j;</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>我刚开始的思路是通过穷举法，两次循环直到对比出两个数字是否相等</p>
+<p><strong>下面是遍历哈希表的方法</strong></p>
+<p>在进行迭代并将元素插入到表中的同时，我们还会回过头来检查表中是否已经存在当前元素所对应的目标元素。如果它存在，那我们已经找到了对应解，并立即将其返回。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"> <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">     <span class="keyword">int</span>[] a=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">     <span class="comment">//建立key-value，对应的map</span></span><br><span class="line">	HashMap&lt;Integer,Integer&gt; hash = <span class="keyword">new</span> HashMap&lt;Integer,Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            <span class="comment">//containsKey方法：判断map中是否存在key为num[i]</span></span><br><span class="line">            <span class="keyword">if</span>(hash.containsKey(nums[i]))&#123;</span><br><span class="line">                a[<span class="number">0</span>] = i;</span><br><span class="line">                a[<span class="number">1</span>] = hash.get(nums[i]);</span><br><span class="line">                <span class="keyword">return</span> a;</span><br><span class="line">            &#125;</span><br><span class="line">            hash.put(target-nums[i],i);</span><br><span class="line">        &#125;</span><br><span class="line">     <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/two-sum">https://leetcode-cn.com/problems/two-sum</a><br>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决主键自增长保存问题</title>
+    <url>/archives/a02f4a86.html</url>
+    <content><![CDATA[<h2 id="用mybatis来解决主键自增长保存问题"><a href="#用mybatis来解决主键自增长保存问题" class="headerlink" title="用mybatis来解决主键自增长保存问题"></a>用mybatis来解决主键自增长保存问题</h2><p>因为在使用mybatis的时候自增长的主键是不能在sql语句中用null来替代的</p>
+<p>比如(错误的例子)</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">&quot;<span class="keyword">insert</span> <span class="keyword">into</span> sys_user <span class="keyword">values</span>(<span class="literal">null</span>,<span class="comment">#&#123;username&#125;,#&#123;email&#125;,#&#123;password&#125;,#&#123;phoneNum&#125;)&quot;</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>而用jdbcTemple的话需要用原始的jdbc去调用数据库对象这就造成了代码很冗长，如下（下面是一个DAO层方法）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//创建PreparedStatementCreator</span></span><br><span class="line">      PreparedStatementCreator creator = <span class="keyword">new</span> PreparedStatementCreator() &#123;</span><br><span class="line">          <span class="function"><span class="keyword">public</span> PreparedStatement <span class="title">createPreparedStatement</span><span class="params">(Connection connection)</span> <span class="keyword">throws</span> SQLException, SQLException </span>&#123;</span><br><span class="line">              <span class="comment">//使用原始jdbc完成有个PreparedStatement的组建</span></span><br><span class="line">              PreparedStatement preparedStatement = connection.prepareStatement(<span class="string">&quot;insert into sys_user values(?,?,?,?,?)&quot;</span>, PreparedStatement.RETURN_GENERATED_KEYS);</span><br><span class="line">              preparedStatement.setObject(<span class="number">1</span>,<span class="keyword">null</span>);</span><br><span class="line">              preparedStatement.setString(<span class="number">2</span>,user.getUsername());</span><br><span class="line">              preparedStatement.setString(<span class="number">3</span>,user.getEmail());</span><br><span class="line">              preparedStatement.setString(<span class="number">4</span>,user.getPassword());</span><br><span class="line">              preparedStatement.setString(<span class="number">5</span>,user.getPhoneNum());</span><br><span class="line">              <span class="keyword">return</span> preparedStatement;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;;</span><br><span class="line">      <span class="comment">//创建keyHolder</span></span><br><span class="line">      GeneratedKeyHolder keyHolder = <span class="keyword">new</span> GeneratedKeyHolder();</span><br><span class="line">      jdbcTemplate.update(creator,keyHolder);</span><br><span class="line">      <span class="comment">//获得生成的主键</span></span><br><span class="line">      <span class="keyword">long</span> userId = keyHolder.getKey().longValue();</span><br><span class="line">      <span class="keyword">return</span> userId; <span class="comment">//返回当前保存用户的id 该id是数据库自动生成的</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>而用mybatis的话可以使用xml或者主键来简化这些，下面是例子（本人习惯用主键）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Insert(&quot;insert into sys_user(username,email,password,phoneNum) values(#&#123;username&#125;,#&#123;email&#125;,#&#123;password&#125;,#&#123;phoneNum&#125;)&quot;)</span></span><br><span class="line">    <span class="meta">@Options(useGeneratedKeys = true,keyProperty = &quot;id&quot;)</span></span><br><span class="line">    <span class="function">Long <span class="title">save</span><span class="params">(User user)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>注解直接可以写在mapper的接口上，这样就不用去写实现类了</p>
+<p>下面解释一下@Options注解的作用：能够设置缓存时间，能够为对象生成自增的主键值（其实有两个应用场景）</p>
+<p>useGeneratedKeys 设置为”true”表明要 MyBatis 获取由数据库自动生成的主键；</p>
+<p>keyProperty=”id”指定把获取到的主键值注入到 XXX（实体类） 的 id 属性</p>
+<hr>
+<p>那么设置了这个注解后就可以用到了这个保存到实体类中的id属性</p>
+<p>用法：只需要调用这个实体类的get方法   </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">save</span><span class="params">(User user, Long[] roleIds)</span> </span>&#123;</span><br><span class="line">       <span class="comment">//第一步 向sys_user表中存储数据</span></span><br><span class="line">       userMapper.save(user);</span><br><span class="line">       Long userId=user.getId();<span class="comment">//就直接去调用实体类中的id</span></span><br><span class="line">       <span class="comment">//第二步 向sys_user_role 关系表中存储多条数据</span></span><br><span class="line">       <span class="keyword">for</span> (Long roleId : roleIds) &#123;</span><br><span class="line">           userMapper.saveUserRoleRel(userId,roleId);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>说到这里就解决了如何在保存数据的时候主键为自增长，而又需要用到这个主键的解决办法</p>
+<p>不过下面我提一下同时存储两个属性的时候一定要在接口处用@Param注明方法的参数与sql语句的参数对应关系</p>
+<p>要不然会出现如下报错</p>
+<p><img src="https://img-blog.csdnimg.cn/20200925130323846.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2NzAxMTAw,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p>例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Insert(&quot;insert into sys_user_role values(#&#123;userId&#125;,#&#123;roleId&#125;)&quot;)</span></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">saveUserRoleRel</span><span class="params">(<span class="meta">@Param(&quot;userId&quot;)</span> Long userId,<span class="meta">@Param(&quot;roleId&quot;)</span> Long roleId)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>上面的问题的解释代码都来自一个简单的ssm项目中，如果有需要可以在下面的连接中自行获取</p>
+<p><a href="https://gitee.com/a_bubble_bear/ssm">码云</a></p>
+]]></content>
+      <categories>
+        <category>SSM</category>
+      </categories>
+      <tags>
+        <tag>SSM</tag>
+      </tags>
   </entry>
 </search>

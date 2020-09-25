@@ -21,18 +21,22 @@
     var CONFIG = {"hostname":"www.xuhbin.top","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="且视他人之疑目如盏盏鬼火 大胆地去走你的夜路">
-<meta property="og:type" content="website">
-<meta property="og:title" content="树上吹只气泡熊">
-<meta property="og:url" content="http://www.xuhbin.top/archives/index.html">
+  <meta name="description" content="用mybatis来解决主键自增长保存问题因为在使用mybatis的时候自增长的主键是不能在sql语句中用null来替代的 比如(错误的例子) 1&quot;insert into sys_user values(null,#&amp;#123;username&amp;#125;,#&amp;#123;email&amp;#125;,#&amp;#123;password&amp;#125;,#&amp;#123;phoneNum&amp;#125;)&amp;quo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决主键自增长保存问题">
+<meta property="og:url" content="http://www.xuhbin.top/archives/a02f4a86.html">
 <meta property="og:site_name" content="树上吹只气泡熊">
-<meta property="og:description" content="且视他人之疑目如盏盏鬼火 大胆地去走你的夜路">
+<meta property="og:description" content="用mybatis来解决主键自增长保存问题因为在使用mybatis的时候自增长的主键是不能在sql语句中用null来替代的 比如(错误的例子) 1&quot;insert into sys_user values(null,#&amp;#123;username&amp;#125;,#&amp;#123;email&amp;#125;,#&amp;#123;password&amp;#125;,#&amp;#123;phoneNum&amp;#125;)&amp;quo">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200925130323846.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2NzAxMTAw,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="article:published_time" content="2020-09-25T05:08:19.124Z">
+<meta property="article:modified_time" content="2020-09-25T05:12:44.339Z">
 <meta property="article:author" content="Bubble Bear">
-<meta property="article:tag" content="Android,Java">
+<meta property="article:tag" content="SSM">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200925130323846.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2NzAxMTAw,size_16,color_FFFFFF,t_70#pic_center">
 
-<link rel="canonical" href="http://www.xuhbin.top/archives/">
+<link rel="canonical" href="http://www.xuhbin.top/archives/a02f4a86.html">
 
 
 <script id="page-configurations">
@@ -40,7 +44,7 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
@@ -51,7 +55,7 @@
 
 <script src="https://cdn.jsdelivr.net/gh/xiao-xu-student/live2d-widget@latest/autoload.js"></script>
 
-  <title>归档 | 树上吹只气泡熊</title>
+  <title>解决主键自增长保存问题 | 树上吹只气泡熊</title>
   
 
 
@@ -202,136 +206,201 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.xuhbin.top/archives/a02f4a86.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon_touxiang.jpg">
+      <meta itemprop="name" content="Bubble Bear">
+      <meta itemprop="description" content="且视他人之疑目如盏盏鬼火 大胆地去走你的夜路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="树上吹只气泡熊">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          解决主键自增长保存问题
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-09-25 13:08:19 / 修改时间：13:12:44" itemprop="dateCreated datePublished" datetime="2020-09-25T13:08:19+08:00">2020-09-25</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SSM/" itemprop="url" rel="index"><span itemprop="name">SSM</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 5 篇日志。 继续努力。</span>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/archives/a02f4a86.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/archives/a02f4a86.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
-    </div>
+        <h2 id="用mybatis来解决主键自增长保存问题"><a href="#用mybatis来解决主键自增长保存问题" class="headerlink" title="用mybatis来解决主键自增长保存问题"></a>用mybatis来解决主键自增长保存问题</h2><p>因为在使用mybatis的时候自增长的主键是不能在sql语句中用null来替代的</p>
+<p>比如(错误的例子)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;<span class="keyword">insert</span> <span class="keyword">into</span> sys_user <span class="keyword">values</span>(<span class="literal">null</span>,<span class="comment">#&#123;username&#125;,#&#123;email&#125;,#&#123;password&#125;,#&#123;phoneNum&#125;)&quot;</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>而用jdbcTemple的话需要用原始的jdbc去调用数据库对象这就造成了代码很冗长，如下（下面是一个DAO层方法）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建PreparedStatementCreator</span></span><br><span class="line">      PreparedStatementCreator creator = <span class="keyword">new</span> PreparedStatementCreator() &#123;</span><br><span class="line">          <span class="function"><span class="keyword">public</span> PreparedStatement <span class="title">createPreparedStatement</span><span class="params">(Connection connection)</span> <span class="keyword">throws</span> SQLException, SQLException </span>&#123;</span><br><span class="line">              <span class="comment">//使用原始jdbc完成有个PreparedStatement的组建</span></span><br><span class="line">              PreparedStatement preparedStatement = connection.prepareStatement(<span class="string">&quot;insert into sys_user values(?,?,?,?,?)&quot;</span>, PreparedStatement.RETURN_GENERATED_KEYS);</span><br><span class="line">              preparedStatement.setObject(<span class="number">1</span>,<span class="keyword">null</span>);</span><br><span class="line">              preparedStatement.setString(<span class="number">2</span>,user.getUsername());</span><br><span class="line">              preparedStatement.setString(<span class="number">3</span>,user.getEmail());</span><br><span class="line">              preparedStatement.setString(<span class="number">4</span>,user.getPassword());</span><br><span class="line">              preparedStatement.setString(<span class="number">5</span>,user.getPhoneNum());</span><br><span class="line">              <span class="keyword">return</span> preparedStatement;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;;</span><br><span class="line">      <span class="comment">//创建keyHolder</span></span><br><span class="line">      GeneratedKeyHolder keyHolder = <span class="keyword">new</span> GeneratedKeyHolder();</span><br><span class="line">      jdbcTemplate.update(creator,keyHolder);</span><br><span class="line">      <span class="comment">//获得生成的主键</span></span><br><span class="line">      <span class="keyword">long</span> userId = keyHolder.getKey().longValue();</span><br><span class="line">      <span class="keyword">return</span> userId; <span class="comment">//返回当前保存用户的id 该id是数据库自动生成的</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<p>而用mybatis的话可以使用xml或者主键来简化这些，下面是例子（本人习惯用主键）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Insert(&quot;insert into sys_user(username,email,password,phoneNum) values(#&#123;username&#125;,#&#123;email&#125;,#&#123;password&#125;,#&#123;phoneNum&#125;)&quot;)</span></span><br><span class="line">    <span class="meta">@Options(useGeneratedKeys = true,keyProperty = &quot;id&quot;)</span></span><br><span class="line">    <span class="function">Long <span class="title">save</span><span class="params">(User user)</span></span>;</span><br></pre></td></tr></table></figure>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-09-25T13:08:19+08:00"
-              content="2020-09-25">
-          09-25
-        </time>
-      </div>
+<p>注解直接可以写在mapper的接口上，这样就不用去写实现类了</p>
+<p>下面解释一下@Options注解的作用：能够设置缓存时间，能够为对象生成自增的主键值（其实有两个应用场景）</p>
+<p>useGeneratedKeys 设置为”true”表明要 MyBatis 获取由数据库自动生成的主键；</p>
+<p>keyProperty=”id”指定把获取到的主键值注入到 XXX（实体类） 的 id 属性</p>
+<hr>
+<p>那么设置了这个注解后就可以用到了这个保存到实体类中的id属性</p>
+<p>用法：只需要调用这个实体类的get方法   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">save</span><span class="params">(User user, Long[] roleIds)</span> </span>&#123;</span><br><span class="line">       <span class="comment">//第一步 向sys_user表中存储数据</span></span><br><span class="line">       userMapper.save(user);</span><br><span class="line">       Long userId=user.getId();<span class="comment">//就直接去调用实体类中的id</span></span><br><span class="line">       <span class="comment">//第二步 向sys_user_role 关系表中存储多条数据</span></span><br><span class="line">       <span class="keyword">for</span> (Long roleId : roleIds) &#123;</span><br><span class="line">           userMapper.saveUserRoleRel(userId,roleId);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/archives/a02f4a86.html" itemprop="url">
-            <span itemprop="name">解决主键自增长保存问题</span>
-          </a>
-      </div>
+<p>说到这里就解决了如何在保存数据的时候主键为自增长，而又需要用到这个主键的解决办法</p>
+<p>不过下面我提一下同时存储两个属性的时候一定要在接口处用@Param注明方法的参数与sql语句的参数对应关系</p>
+<p>要不然会出现如下报错</p>
+<p><img src="https://img-blog.csdnimg.cn/20200925130323846.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2NzAxMTAw,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p>例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Insert(&quot;insert into sys_user_role values(#&#123;userId&#125;,#&#123;roleId&#125;)&quot;)</span></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">saveUserRoleRel</span><span class="params">(<span class="meta">@Param(&quot;userId&quot;)</span> Long userId,<span class="meta">@Param(&quot;roleId&quot;)</span> Long roleId)</span></span>;</span><br></pre></td></tr></table></figure>
 
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-09-22T19:32:32+08:00"
-              content="2020-09-22">
-          09-22
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/archives/afd39f9c.html" itemprop="url">
-            <span itemprop="name">LeetCode(两数和)</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-09-20T20:39:28+08:00"
-              content="2020-09-20">
-          09-20
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/archives/8999c4d.html" itemprop="url">
-            <span itemprop="name">IDEA 突然无法打开</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-09-02T14:46:44+08:00"
-              content="2020-09-02">
-          09-02
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/archives/a3765c9.html" itemprop="url">
-            <span itemprop="name">Git 简单命令</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-08-30T15:39:08+08:00"
-              content="2020-08-30">
-          08-30
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/archives/4a17b156.html" itemprop="url">
-            <span itemprop="name">Hello World</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+<hr>
+<p>上面的问题的解释代码都来自一个简单的ssm项目中，如果有需要可以在下面的连接中自行获取</p>
+<p><a target="_blank" rel="noopener" href="https://gitee.com/a_bubble_bear/ssm">码云</a></p>
 
     </div>
+
+    
+    
+    <div>
+    
+      <div style="text-align:center;color: #ccc;font-size:20px;">------------- 本 文 结 束 <i class="fa fa-paw"></i> 感 谢 您 的 阅 读 -------------</div>
+    
+</div>
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Bubble Bear 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="Bubble Bear 支付宝">
+        <p>支付宝</p>
+      </div>
+
   </div>
-  
-  
-  
+</div>
 
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Bubble Bear
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://www.xuhbin.top/archives/a02f4a86.html" title="解决主键自增长保存问题">http://www.xuhbin.top/archives/a02f4a86.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/SSM/" rel="tag"><i class="fa fa-tag"></i> SSM</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/archives/afd39f9c.html" rel="prev" title="LeetCode(两数和)">
+      <i class="fa fa-chevron-left"></i> LeetCode(两数和)
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -378,6 +447,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8mybatis%E6%9D%A5%E8%A7%A3%E5%86%B3%E4%B8%BB%E9%94%AE%E8%87%AA%E5%A2%9E%E9%95%BF%E4%BF%9D%E5%AD%98%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">用mybatis来解决主键自增长保存问题</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
