@@ -145,94 +145,6 @@
       </tags>
   </entry>
   <entry>
-    <title>IDEA 突然无法打开</title>
-    <url>/archives/8999c4d.html</url>
-    <content><![CDATA[<h2 id="问题来源：idea2019突然打不开并弹出"><a href="#问题来源：idea2019突然打不开并弹出" class="headerlink" title="问题来源：idea2019突然打不开并弹出"></a>问题来源：idea2019突然打不开并弹出</h2><p>错误示例：</p>
-<p><img src="https://s1.ax1x.com/2020/09/20/wTjrhq.jpg" alt="wTjrhq.jpg"></p>
-<h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><p>看到这个错误第一考虑一下自己的jdk是否配好了环境</p>
-<p>注意到下面的 JVM 错误，是否 I在使用dea 时设置过 JVM 的参数</p>
-<h2 id="破解时带来的错误"><a href="#破解时带来的错误" class="headerlink" title="破解时带来的错误"></a>破解时带来的错误</h2><p>一、检查破解的jar包是否在放在指定目录下</p>
-<p>二、编辑参数写错，或者用记事本编辑保存时，文本编码格式出错</p>
-<a id="more"></a>
-
-<h2 id="用户配置文件出错"><a href="#用户配置文件出错" class="headerlink" title="用户配置文件出错"></a>用户配置文件出错</h2><p>上次我的错误就是C:\Users\ASUS.IntelliJIdea2019.3\config\idea64.exe.vmoptions文件中的-javaagent:的目录错误</p>
-<p>如果这里错误的话就把破解包的地址引到这里</p>
-<p>如图：（我的是放在f盘下）</p>
-<p><img src="https://s1.ax1x.com/2020/09/20/wTzODU.jpg" alt="wTzODU.jpg"></p>
-<p>最后不要删除整个用户配置文件要不然你之前idea的配置以及插件都需要重新配置</p>
-]]></content>
-      <categories>
-        <category>错误</category>
-      </categories>
-      <tags>
-        <tag>错误</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode(整数反转)</title>
-    <url>/archives/6b209158.html</url>
-    <content><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p><strong>难度简单</strong></p>
-<p>给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。</p>
-<p><strong>示例 1:</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: 123</span><br><span class="line">输出: 321</span><br></pre></td></tr></table></figure>
-
-<p> <strong>示例 2:</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: -123</span><br><span class="line">输出: -321</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 3:</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: 120</span><br><span class="line">输出: 21</span><br></pre></td></tr></table></figure>
-
-<p>注意:</p>
-<p>假设我们的环境只能存储得下 32 位的有符号整数，则其数值范围为 [−231,  231 − 1]。请根据这个假设，如果反转后整数溢出那么就返回 0。</p>
-<p>我刚开始写的时候(暴力反转)，但是超时</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span> flag=<span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">while</span>(x%<span class="number">10</span>==<span class="number">0</span>) &#123;</span><br><span class="line">			x/=<span class="number">10</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(x&lt;<span class="number">0</span>) &#123;</span><br><span class="line">			flag=<span class="keyword">false</span>;</span><br><span class="line">			x=-x;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> g=x;</span><br><span class="line">		<span class="keyword">int</span> n=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(x%<span class="number">10</span>&gt;<span class="number">0</span>) &#123;</span><br><span class="line">			x/=<span class="number">10</span>;</span><br><span class="line">			n++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> []a=<span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">		<span class="keyword">int</span> k;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.length;i++) &#123;</span><br><span class="line">			k=g%<span class="number">10</span>;</span><br><span class="line">			g/=<span class="number">10</span>;</span><br><span class="line">			a[i]=k;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> result=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.length;i++) &#123;</span><br><span class="line">			<span class="keyword">if</span>(i==<span class="number">0</span>) &#123;</span><br><span class="line">				result+=a[i];</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				result*=<span class="number">10</span>;</span><br><span class="line">				result+=a[i];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(!flag) &#123;</span><br><span class="line">			result=-result;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p><strong>算法</strong><br>反转整数的方法可以与反转字符串进行类比。<br>我们想重复“弹出” xxx 的最后一位数字，并将它“推入”到 rev\text{rev}rev 的后面。最后，rev\text{rev}rev 将与 xxx 相反。<br>要在没有辅助堆栈 / 数组的帮助下 “弹出” 和 “推入” 数字，我们可以使用数学方法。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//pop operation:弹出</span></span><br><span class="line">pop = x % <span class="number">10</span>;</span><br><span class="line">x /= <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//push operation:堆入</span></span><br><span class="line">temp = rev * <span class="number">10</span> + pop;</span><br><span class="line">rev = temp;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>官方的解法：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> rev = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (x != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> pop = x % <span class="number">10</span>;</span><br><span class="line">            x /= <span class="number">10</span>;</span><br><span class="line">            <span class="comment">//防止溢出</span></span><br><span class="line">            <span class="keyword">if</span> (rev &gt; Integer.MAX_VALUE/<span class="number">10</span> || (rev == Integer.MAX_VALUE / <span class="number">10</span> &amp;&amp; pop &gt; <span class="number">7</span>)) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (rev &lt; Integer.MIN_VALUE/<span class="number">10</span> || (rev == Integer.MIN_VALUE / <span class="number">10</span> &amp;&amp; pop &lt; -<span class="number">8</span>)) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            rev = rev * <span class="number">10</span> + pop;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> rev;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>java int 类整数的最大值是 2 的 31 次方 - 1 = <strong>2147483648 - 1</strong> = <strong>2147483647</strong></p>
-<p>可以用 <strong>Integer.MAX_VALUE</strong> 表示它，即 int value = Integer.MAX_VALUE;</p>
-<p>Integer.MAX_VALUE + 1 = Integer.MIN_VALUE = <strong>-2147483648</strong> </p>
-<p>所以需要约束rev的大小以及最后一位进行对比</p>
-<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/reverse-integer">https://leetcode-cn.com/problems/reverse-integer</a><br>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode(两数和)</title>
-    <url>/archives/afd39f9c.html</url>
-    <content><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p><strong>难度简单</strong></p>
-<p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
-<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。</p>
-<p>示例：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">给定 nums = [<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>], target = <span class="number">9</span></span><br><span class="line"></span><br><span class="line">因为 nums[<span class="number">0</span>] + nums[<span class="number">1</span>] = <span class="number">2</span> + <span class="number">7</span> = <span class="number">9</span></span><br><span class="line">所以返回 [<span class="number">0</span>, <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-
-<p>我第一次完成写时用的Java</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"> <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">int</span>[] a=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;nums.length;i++)&#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;nums.length;j++)&#123;</span><br><span class="line"></span><br><span class="line">         <span class="keyword">if</span>(nums[i]+nums[j]==target)&#123;</span><br><span class="line">            a[<span class="number">0</span>]=i;</span><br><span class="line">            a[<span class="number">1</span>]=j;</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>我刚开始的思路是通过穷举法，两次循环直到对比出两个数字是否相等</p>
-<p><strong>下面是遍历哈希表的方法</strong></p>
-<p>在进行迭代并将元素插入到表中的同时，我们还会回过头来检查表中是否已经存在当前元素所对应的目标元素。如果它存在，那我们已经找到了对应解，并立即将其返回。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"> <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">     <span class="keyword">int</span>[] a=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">     <span class="comment">//建立key-value，对应的map</span></span><br><span class="line">	HashMap&lt;Integer,Integer&gt; hash = <span class="keyword">new</span> HashMap&lt;Integer,Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            <span class="comment">//containsKey方法：判断map中是否存在key为num[i]</span></span><br><span class="line">            <span class="keyword">if</span>(hash.containsKey(nums[i]))&#123;</span><br><span class="line">                a[<span class="number">0</span>] = i;</span><br><span class="line">                a[<span class="number">1</span>] = hash.get(nums[i]);</span><br><span class="line">                <span class="keyword">return</span> a;</span><br><span class="line">            &#125;</span><br><span class="line">            hash.put(target-nums[i],i);</span><br><span class="line">        &#125;</span><br><span class="line">     <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/two-sum">https://leetcode-cn.com/problems/two-sum</a><br>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode(回文数)</title>
     <url>/archives/1efcd3dd.html</url>
     <content><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p><strong>难度简单</strong></p>
@@ -262,6 +174,88 @@
       </categories>
       <tags>
         <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>IDEA 突然无法打开</title>
+    <url>/archives/8999c4d.html</url>
+    <content><![CDATA[<h2 id="问题来源：idea2019突然打不开并弹出"><a href="#问题来源：idea2019突然打不开并弹出" class="headerlink" title="问题来源：idea2019突然打不开并弹出"></a>问题来源：idea2019突然打不开并弹出</h2><p>错误示例：</p>
+<p><img src="https://s1.ax1x.com/2020/09/20/wTjrhq.jpg" alt="wTjrhq.jpg"></p>
+<h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><p>看到这个错误第一考虑一下自己的jdk是否配好了环境</p>
+<p>注意到下面的 JVM 错误，是否 I在使用dea 时设置过 JVM 的参数</p>
+<h2 id="破解时带来的错误"><a href="#破解时带来的错误" class="headerlink" title="破解时带来的错误"></a>破解时带来的错误</h2><p>一、检查破解的jar包是否在放在指定目录下</p>
+<p>二、编辑参数写错，或者用记事本编辑保存时，文本编码格式出错</p>
+<a id="more"></a>
+
+<h2 id="用户配置文件出错"><a href="#用户配置文件出错" class="headerlink" title="用户配置文件出错"></a>用户配置文件出错</h2><p>上次我的错误就是C:\Users\ASUS.IntelliJIdea2019.3\config\idea64.exe.vmoptions文件中的-javaagent:的目录错误</p>
+<p>如果这里错误的话就把破解包的地址引到这里</p>
+<p>如图：（我的是放在f盘下）</p>
+<p><img src="https://s1.ax1x.com/2020/09/20/wTzODU.jpg" alt="wTzODU.jpg"></p>
+<p>最后不要删除整个用户配置文件要不然你之前idea的配置以及插件都需要重新配置</p>
+]]></content>
+      <categories>
+        <category>错误</category>
+      </categories>
+      <tags>
+        <tag>错误</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode(两数和)</title>
+    <url>/archives/afd39f9c.html</url>
+    <content><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p><strong>难度简单</strong></p>
+<p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。</p>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">给定 nums = [<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>], target = <span class="number">9</span></span><br><span class="line"></span><br><span class="line">因为 nums[<span class="number">0</span>] + nums[<span class="number">1</span>] = <span class="number">2</span> + <span class="number">7</span> = <span class="number">9</span></span><br><span class="line">所以返回 [<span class="number">0</span>, <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+<p>我第一次完成写时用的Java</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"> <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">int</span>[] a=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;nums.length;i++)&#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;nums.length;j++)&#123;</span><br><span class="line"></span><br><span class="line">         <span class="keyword">if</span>(nums[i]+nums[j]==target)&#123;</span><br><span class="line">            a[<span class="number">0</span>]=i;</span><br><span class="line">            a[<span class="number">1</span>]=j;</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>我刚开始的思路是通过穷举法，两次循环直到对比出两个数字是否相等</p>
+<p><strong>下面是遍历哈希表的方法</strong></p>
+<p>在进行迭代并将元素插入到表中的同时，我们还会回过头来检查表中是否已经存在当前元素所对应的目标元素。如果它存在，那我们已经找到了对应解，并立即将其返回。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"> <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">     <span class="keyword">int</span>[] a=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">     <span class="comment">//建立key-value，对应的map</span></span><br><span class="line">	HashMap&lt;Integer,Integer&gt; hash = <span class="keyword">new</span> HashMap&lt;Integer,Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            <span class="comment">//containsKey方法：判断map中是否存在key为num[i]</span></span><br><span class="line">            <span class="keyword">if</span>(hash.containsKey(nums[i]))&#123;</span><br><span class="line">                a[<span class="number">0</span>] = i;</span><br><span class="line">                a[<span class="number">1</span>] = hash.get(nums[i]);</span><br><span class="line">                <span class="keyword">return</span> a;</span><br><span class="line">            &#125;</span><br><span class="line">            hash.put(target-nums[i],i);</span><br><span class="line">        &#125;</span><br><span class="line">     <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/two-sum">https://leetcode-cn.com/problems/two-sum</a><br>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>广义表基础知识</title>
+    <url>/archives/7b4750be.html</url>
+    <content><![CDATA[<h1 id="广义表"><a href="#广义表" class="headerlink" title="广义表"></a>广义表</h1><p>广义表是一种复杂的数据结构，它是<strong>线性表的扩展</strong>，能够表示<strong>树结构</strong>和<strong>图结构</strong>。</p>
+<h3 id="广义表的定义"><a href="#广义表的定义" class="headerlink" title="广义表的定义"></a>广义表的定义</h3><p>广义表是n（n&gt;=0)个数据元素a0,a1,……an-1组成的有限序列，记为GLIst=(a0,a1,…,an-1),其中ai（0&lt;=i&lt;=n）是<strong>原子或广义表</strong>，原子市不可分解的数据元素。</p>
+<p><strong>广义表的长度：</strong>最外层包含的元素个数n</p>
+<p>当n=0时，为<strong>空表</strong></p>
+<p><strong>广义表的深度：</strong>表中所含括号的层数</p>
+<p> <strong>注意：</strong>“原子”的深度为 0 “<br>               “空表”的深度为 1” </p>
+<p><strong>递归表：</strong>深度是无穷值，长度是有限值</p>
+<p>例子：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">L&#x3D;(a,b) &#x2F;&#x2F;线性表，长度为2，深度为1</span><br><span class="line">T&#x3D;(c,L)&#x3D;(c,(a,b))&#x2F;&#x2F;L为T的子表，T的长度为2，深度为2</span><br><span class="line">G&#x3D;(d,L,T)&#x3D;(d,(a,b),(c,(a,b)))&#x2F;&#x2F;L,T为G的子表，G的长度为3，深度为3</span><br><span class="line">S&#x3D;()&#x2F;&#x2F;空表，长度为0，深度为1</span><br><span class="line">S1&#x3D;(S)&#x2F;&#x2F;非空表，元素是一个空表，长度为1，深度为2</span><br><span class="line">Z&#x3D;(e,Z)&#x3D;(e,(e,(e(....))))&#x2F;&#x2F;递归表，Z的长度为2，深度无穷</span><br></pre></td></tr></table></figure>
+
+<p><strong>表头：</strong>当广义表非空时，称第一个<strong>元素</strong>为该广义表的表头。</p>
+<p><strong>表尾：</strong>除第一个元素以外，其他的元素组成的表称为该<strong>广义表</strong>的表尾。</p>
+<p>任何一个非空广义表    LS = ( a1, a2, …, an)  均可分解为<br>           表头  Head(LS) = a1   和<br>           表尾  Tail(LS) = ( a2, …, an)     两部分。</p>
+<p><em>注：</em></p>
+<p>1.<strong>对任意一个非空的广义表，其表头可能是单元素，也可能是广义表，</strong></p>
+<p>2.<strong>表尾一定是广义表。</strong></p>
+<p>3.<strong>表尾是由除了表头以外的其余元素组成的广义表，所以需要在表尾的直接元素外面再加一层括号。</strong></p>
+<h3 id="广义表的特性"><a href="#广义表的特性" class="headerlink" title="广义表的特性"></a>广义表的特性</h3><p>1.线性结构</p>
+<p>2.多层次结构、有深度</p>
+<p>3.可共享</p>
+<p>4.可递归</p>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -311,6 +305,44 @@
       </categories>
       <tags>
         <tag>SSM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode(整数反转)</title>
+    <url>/archives/6b209158.html</url>
+    <content><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p><strong>难度简单</strong></p>
+<p>给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: 123</span><br><span class="line">输出: 321</span><br></pre></td></tr></table></figure>
+
+<p> <strong>示例 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: -123</span><br><span class="line">输出: -321</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: 120</span><br><span class="line">输出: 21</span><br></pre></td></tr></table></figure>
+
+<p>注意:</p>
+<p>假设我们的环境只能存储得下 32 位的有符号整数，则其数值范围为 [−231,  231 − 1]。请根据这个假设，如果反转后整数溢出那么就返回 0。</p>
+<p>我刚开始写的时候(暴力反转)，但是超时</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span> flag=<span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">while</span>(x%<span class="number">10</span>==<span class="number">0</span>) &#123;</span><br><span class="line">			x/=<span class="number">10</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(x&lt;<span class="number">0</span>) &#123;</span><br><span class="line">			flag=<span class="keyword">false</span>;</span><br><span class="line">			x=-x;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> g=x;</span><br><span class="line">		<span class="keyword">int</span> n=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(x%<span class="number">10</span>&gt;<span class="number">0</span>) &#123;</span><br><span class="line">			x/=<span class="number">10</span>;</span><br><span class="line">			n++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> []a=<span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">		<span class="keyword">int</span> k;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.length;i++) &#123;</span><br><span class="line">			k=g%<span class="number">10</span>;</span><br><span class="line">			g/=<span class="number">10</span>;</span><br><span class="line">			a[i]=k;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> result=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.length;i++) &#123;</span><br><span class="line">			<span class="keyword">if</span>(i==<span class="number">0</span>) &#123;</span><br><span class="line">				result+=a[i];</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				result*=<span class="number">10</span>;</span><br><span class="line">				result+=a[i];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(!flag) &#123;</span><br><span class="line">			result=-result;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p><strong>算法</strong><br>反转整数的方法可以与反转字符串进行类比。<br>我们想重复“弹出” xxx 的最后一位数字，并将它“推入”到 rev\text{rev}rev 的后面。最后，rev\text{rev}rev 将与 xxx 相反。<br>要在没有辅助堆栈 / 数组的帮助下 “弹出” 和 “推入” 数字，我们可以使用数学方法。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//pop operation:弹出</span></span><br><span class="line">pop = x % <span class="number">10</span>;</span><br><span class="line">x /= <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//push operation:堆入</span></span><br><span class="line">temp = rev * <span class="number">10</span> + pop;</span><br><span class="line">rev = temp;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>官方的解法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> rev = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (x != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> pop = x % <span class="number">10</span>;</span><br><span class="line">            x /= <span class="number">10</span>;</span><br><span class="line">            <span class="comment">//防止溢出</span></span><br><span class="line">            <span class="keyword">if</span> (rev &gt; Integer.MAX_VALUE/<span class="number">10</span> || (rev == Integer.MAX_VALUE / <span class="number">10</span> &amp;&amp; pop &gt; <span class="number">7</span>)) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (rev &lt; Integer.MIN_VALUE/<span class="number">10</span> || (rev == Integer.MIN_VALUE / <span class="number">10</span> &amp;&amp; pop &lt; -<span class="number">8</span>)) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            rev = rev * <span class="number">10</span> + pop;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> rev;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>java int 类整数的最大值是 2 的 31 次方 - 1 = <strong>2147483648 - 1</strong> = <strong>2147483647</strong></p>
+<p>可以用 <strong>Integer.MAX_VALUE</strong> 表示它，即 int value = Integer.MAX_VALUE;</p>
+<p>Integer.MAX_VALUE + 1 = Integer.MIN_VALUE = <strong>-2147483648</strong> </p>
+<p>所以需要约束rev的大小以及最后一位进行对比</p>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/reverse-integer">https://leetcode-cn.com/problems/reverse-integer</a><br>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
