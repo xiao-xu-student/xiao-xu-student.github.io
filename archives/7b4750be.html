@@ -21,15 +21,15 @@
     var CONFIG = {"hostname":"www.xuhbin.top","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="广义表广义表是一种复杂的数据结构，它是线性表的扩展，能够表示树结构和图结构。 广义表的定义广义表是n（n&gt;&#x3D;0)个数据元素a0,a1,……an-1组成的有限序列，记为GLIst&#x3D;(a0,a1,…,an-1),其中ai（0&lt;&#x3D;i&lt;&#x3D;n）是原子或广义表，原子市不可分解的数据元素。 广义表的长度：最外层包含的元素个数n 当n&#x3D;0时，为空表 广义表的深度：表中所含括号的层数  注意：“原">
+  <meta name="description" content="广义表广义表是一种复杂的数据结构，它是线性表的扩展，能够表示树结构和图结构。 广义表的定义广义表是n（n&gt;&#x3D;0)个数据元素a0,a1,……an-1组成的有限序列，记为GLIst&#x3D;(a0,a1,…,an-1),其中ai（0&lt;&#x3D;i&lt;&#x3D;n）是原子或广义表，原子市不可分解的数据元素。 广义表的长度：最外层包含的元素个数n 当n&#x3D;0时，为空表">
 <meta property="og:type" content="article">
 <meta property="og:title" content="广义表基础知识">
 <meta property="og:url" content="http://www.xuhbin.top/archives/7b4750be.html">
 <meta property="og:site_name" content="树上吹只气泡熊">
-<meta property="og:description" content="广义表广义表是一种复杂的数据结构，它是线性表的扩展，能够表示树结构和图结构。 广义表的定义广义表是n（n&gt;&#x3D;0)个数据元素a0,a1,……an-1组成的有限序列，记为GLIst&#x3D;(a0,a1,…,an-1),其中ai（0&lt;&#x3D;i&lt;&#x3D;n）是原子或广义表，原子市不可分解的数据元素。 广义表的长度：最外层包含的元素个数n 当n&#x3D;0时，为空表 广义表的深度：表中所含括号的层数  注意：“原">
+<meta property="og:description" content="广义表广义表是一种复杂的数据结构，它是线性表的扩展，能够表示树结构和图结构。 广义表的定义广义表是n（n&gt;&#x3D;0)个数据元素a0,a1,……an-1组成的有限序列，记为GLIst&#x3D;(a0,a1,…,an-1),其中ai（0&lt;&#x3D;i&lt;&#x3D;n）是原子或广义表，原子市不可分解的数据元素。 广义表的长度：最外层包含的元素个数n 当n&#x3D;0时，为空表">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-30T00:29:26.565Z">
-<meta property="article:modified_time" content="2020-11-30T00:33:21.408Z">
+<meta property="article:modified_time" content="2021-01-09T15:06:44.103Z">
 <meta property="article:author" content="Bubble Bear">
 <meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
@@ -148,7 +148,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">9</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-links">
@@ -233,10 +233,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-30 08:29:26 / 修改时间：08:33:21" itemprop="dateCreated datePublished" datetime="2020-11-30T08:29:26+08:00">2020-11-30</time>
+              <time title="创建时间：2020-11-30 08:29:26" itemprop="dateCreated datePublished" datetime="2020-11-30T08:29:26+08:00">2020-11-30</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-01-09 23:06:44" itemprop="dateModified" datetime="2021-01-09T23:06:44+08:00">2021-01-09</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -297,6 +303,7 @@
 <h3 id="广义表的定义"><a href="#广义表的定义" class="headerlink" title="广义表的定义"></a>广义表的定义</h3><p>广义表是n（n&gt;=0)个数据元素a0,a1,……an-1组成的有限序列，记为GLIst=(a0,a1,…,an-1),其中ai（0&lt;=i&lt;=n）是<strong>原子或广义表</strong>，原子市不可分解的数据元素。</p>
 <p><strong>广义表的长度：</strong>最外层包含的元素个数n</p>
 <p>当n=0时，为<strong>空表</strong></p>
+<a id="more"></a>
 <p><strong>广义表的深度：</strong>表中所含括号的层数</p>
 <p> <strong>注意：</strong>“原子”的深度为 0 “<br>               “空表”的深度为 1” </p>
 <p><strong>递归表：</strong>深度是无穷值，长度是有限值</p>
@@ -377,7 +384,10 @@
     <a href="/archives/1efcd3dd.html" rel="prev" title="LeetCode(回文数)">
       <i class="fa fa-chevron-left"></i> LeetCode(回文数)
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/archives/8c0a4848.html" rel="next" title="树和二叉树知识">
+      树和二叉树知识 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -453,7 +463,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -501,15 +511,15 @@
         <!-- 显示三条近期文章，请自信合理配置 -->
         
           <li>
+            <a href="/archives/8c0a4848.html" title="树和二叉树知识" target="_blank">树和二叉树知识</a>
+          </li>
+        
+          <li>
             <a href="/archives/7b4750be.html" title="广义表基础知识" target="_blank">广义表基础知识</a>
           </li>
         
           <li>
             <a href="/archives/1efcd3dd.html" title="LeetCode(回文数)" target="_blank">LeetCode(回文数)</a>
-          </li>
-        
-          <li>
-            <a href="/archives/ec218774.html" title="SSM小Demo——许愿池" target="_blank">SSM小Demo——许愿池</a>
           </li>
         
       </ul>
@@ -533,8 +543,8 @@
 
 <div class="copyright">
   
-  &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fas fa-heartbeat"></i>
   </span>
@@ -543,12 +553,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">20k</span>
+    <span title="站点总字数">22k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">18 分钟</span>
+    <span title="站点阅读时长">20 分钟</span>
 </div><span id="sitetime"></span>
 <script language=javascript>
 	function siteTime(){
